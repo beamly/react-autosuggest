@@ -20,6 +20,9 @@
   position: absolute;
   top: 51px;
   width: 280px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   border: 1px solid #aaaaaa;
   background-color: #fff;
   font-size: 18px;
@@ -37,6 +40,11 @@
   color: #777;
   border-top: 1px dashed #ccc;
 }
+.react-autosuggest__suggestions-section-suggestions {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 .react-autosuggest__suggestion {
   cursor: pointer;
   padding: 10px 20px;
@@ -50,29 +58,70 @@
 .badges a {
   margin-right: 5px;
 }
+.examples__events-log {
+  flex-grow: 1;
+  width: 300px;
+  margin: 20px 0;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 12px;
+  overflow: auto;
+}
+.examples__events-log__event {
+  margin-bottom: 10px;
+}
+.examples__events-log__event--placeholder {
+  color: #aaa;
+}
+.examples__events-log__event--suggestion-selected .examples__events-log__event-description {
+  color: #1CB30C;
+  font-weight: bold;
+}
 .examples {
   display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
 }
-.examples-menu {
-  margin-right: 30px;
-  padding: 10px 50px 20px 0;
+.examples__column {
+  display: flex;
+  flex-direction: column;
+}
+.examples__menu {
+  flex-shrink: 0;
+  min-width: 180px;
+  padding-top: 10px;
   font-size: 18px;
   border-radius: 4px;
 }
-.examples-menu__item {
+.examples__menu-item {
   padding: 5px 0;
   color: #777;
   cursor: pointer;
 }
-.examples-menu__item--active {
+.examples__menu-item--active {
   color: #ff0000;
   cursor: default;
 }
+.examples__events-log-wrapper {
+  position: relative;
+}
+.examples__events-log-wrapper button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #999;
+}
+.examples__events-log-wrapper button:hover {
+  color: #000;
+}
 .footer {
   display: flex;
-  flex-grow: 1;
-  align-items: flex-end;
+  flex-shrink: 0;
   margin-bottom: 30px;
+  height: 32px;
   line-height: 32px;
 }
 .footer img {
@@ -105,7 +154,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Helvetica Neue', Helvetica, Arial;
-  width: 500px;
+  width: 600px;
   padding: 0 40px;
   border-left: 1px dashed #777;
   border-right: 1px dashed #777;
@@ -113,5 +162,9 @@ body {
 #app > div {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   position: relative;
+}
+#app > div h1 {
+  flex-shrink: 0;
 }

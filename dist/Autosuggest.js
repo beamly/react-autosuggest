@@ -1,6 +1,6 @@
 'use strict';
 
-var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
+var _interopRequireDefault = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
 
 var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } };
 
@@ -20,19 +20,19 @@ Object.defineProperty(exports, '__esModule', {
 
 var _React$Component$PropTypes$findDOMNode = require('react');
 
-var _React$Component$PropTypes$findDOMNode2 = _interopRequireWildcard(_React$Component$PropTypes$findDOMNode);
+var _React$Component$PropTypes$findDOMNode2 = _interopRequireDefault(_React$Component$PropTypes$findDOMNode);
 
 var _debounce = require('debounce');
 
-var _debounce2 = _interopRequireWildcard(_debounce);
+var _debounce2 = _interopRequireDefault(_debounce);
 
 var _classnames = require('classnames');
 
-var _classnames2 = _interopRequireWildcard(_classnames);
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var _sectionIterator = require('./sectionIterator');
 
-var _sectionIterator2 = _interopRequireWildcard(_sectionIterator);
+var _sectionIterator2 = _interopRequireDefault(_sectionIterator);
 
 'use strict';
 
@@ -186,6 +186,10 @@ var Autosuggest = (function (_Component) {
         value: newValue,
         valueBeforeUpDown: null
       });
+
+      if (this.props.onInputChange) {
+        this.props.onInputChange(event);
+      }
 
       this.showSuggestions(newValue);
     }
@@ -417,6 +421,9 @@ var Autosuggest = (function (_Component) {
       suggestionValue: _React$Component$PropTypes$findDOMNode.PropTypes.func, // Function that maps suggestion object to input value (must be implemented when suggestions are objects)
       showWhen: _React$Component$PropTypes$findDOMNode.PropTypes.func, // Function that determines whether to show suggestions or not
       onSuggestionSelected: _React$Component$PropTypes$findDOMNode.PropTypes.func, // This function is called when suggestion is selected via mouse click or Enter
+
+      onInputChange: _React$Component$PropTypes$findDOMNode.PropTypes.func, // Function to allow external access to input onChange events
+
       inputAttributes: _React$Component$PropTypes$findDOMNode.PropTypes.objectOf(_React$Component$PropTypes$findDOMNode.PropTypes.string) // Attributes to pass to the input field (e.g. { id: 'my-input', className: 'sweet autosuggest' })
     },
     enumerable: true
